@@ -1,0 +1,61 @@
+# 📄 AI ATS Resume Optimizer & Scorer
+
+An intelligent, full-stack Applicant Tracking System (ATS) resume scanner, scorer, and optimizer built with **Python**, **Streamlit**, and **Google Gemini AI**.
+
+---
+
+## 🌟 Key Features
+
+1. **Multi-Format Resume Upload**:
+   - Accepts **PDF**, **DOCX**, and **TXT** files, or direct text paste.
+   - Normalizes text to mimic actual ATS parsers (Workday, Greenhouse, Taleo, Lever).
+
+2. **Dual Assessment Modes**:
+   - **General ATS Health Audit**: Evaluates layout, section completeness, action verbs, and quantifiable impact metrics without needing a job description.
+   - **Target Job Description Matching**: Compares resume text directly with target job requirements, pinpointing exact keyword gaps and skill mismatches.
+
+3. **Google XYZ Formula Bullet Rewriter**:
+   - Flags passive or vague bullet points (e.g., *"Responsible for managing tasks"*).
+   - Rewrites them using Google's proven framework:
+     > *"Accomplished [X] as measured by [Y], by doing [Z]"*
+
+4. **Interactive Visual Dashboard**:
+   - Dynamic **Plotly ATS Score Gauge** (0–100).
+   - **Category Score Breakdown** across Formatting, Impact Metrics, Skills Alignment, Structure, and Keywords.
+   - **Keyword Badges** highlighting both present and missing critical skills.
+
+5. **ATS Compliance Checklist**:
+   - Single-column layout safety check.
+   - Standard section headers detection (`Experience`, `Education`, `Skills`).
+   - Contact info health check (Email, Phone, LinkedIn, GitHub).
+   - Overused buzzword and cliché detection.
+
+6. **Offline & AI Dual-Engine**:
+   - Connect your **Gemini API key** for deep semantic review, intelligent rewrites, and deep keyword extraction.
+   - Works fully **offline** with heuristic rule-based scoring when an API key is not yet set.
+
+7. **One-Click Export**:
+   - Download a comprehensive ATS audit report in Markdown format.
+
+---
+
+## 🚀 Setup & Run Instructions
+
+### 1. Install Dependencies
+Open your terminal (PowerShell or Command Prompt) and run:
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Run the Application
+```bash
+streamlit run app.py
+```
+
+### 3. (Optional) Configure Google Gemini API Key
+- Get a free key from: [https://aistudio.google.com](https://aistudio.google.com)
+- Enter your key in the app's sidebar, or create a `.env` file:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+*(If no API key is provided, the app will automatically run in heuristic offline mode).*
